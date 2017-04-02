@@ -54,7 +54,7 @@
     12.  Check the contents of a File
 
           ans=imfinfo(imgfilename);
-          >> ans
+           ans
 
     13. Checking how image appears in the workspace
 
@@ -63,7 +63,6 @@
     14. Histogram for a Grayscale image
 
         imhist(I);
-
 
     15. Histogram Equalization
 
