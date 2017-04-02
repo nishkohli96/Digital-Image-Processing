@@ -1,0 +1,82 @@
+
+      Digital Image Processing
+
+         Matlab Codes
+
+   1.  Reading and Displaying an Image
+
+       I=imread('C:\Users\HP\Downloads\lena.jpg');
+       imshow(I);
+
+   2.  Resizing an Image
+
+        B=imresize(I,0.5);
+
+   3.  Rotating an image
+
+        J=imrotate(I,45);
+
+   4.  Translating an Image
+
+         K = imtranslate(I,[15, 25]);  %translating pixels along X and Y direction
+
+   5.  Negative of an image
+
+          k2 = imadjust(I,[0 1], [1 0]);
+
+   6.  Converting an image into grayscale
+
+          L=rgb2gray(J);
+
+   7.  High-Pass filter on an image
+
+          kernel = [-1 -1 -1;-1 8 -1;-1 -1 -1];
+          filteredImage = imfilter(I, kernel, 'same');
+
+    8. Salt and Pepper Noise
+
+          J = imnoise(I,'salt & pepper',0.02);
+
+    9. Median Filter on an Image
+
+         H = fspecial('average', [3 3]);
+         G = imfilter(I, H);
+
+    10.  Low-Pass Filter on an image
+
+         kernel=[1/9,1/9,1/9,1/9,1/9,1/9,1/9,1/9,1/9];
+         filteredimg=imfilter(J,kernel,'same');
+
+    11.  Writing to a file
+
+          imwrite(imgvariable,new filename);
+
+    12.  Check the contents of a File
+
+          ans=imfinfo(imgfilename);
+          >> ans
+
+    13. Checking how image appears in the workspace
+
+         whos J;
+
+    14. Histogram for a Grayscale image
+
+        imhist(I);
+
+
+    15. Histogram Equalization
+
+        H=histeq(I);
+        imshow(H);
+
+    16. Histogram Specification
+
+        V=histeq(R,imhist(Q));   where Q and R are grayscale images
+
+    17. High Boost Filter
+
+        kernel = [-1 -1 -1;-1 10 -1;-1 -1 -1];
+        filteredImage = imfilter(I, kernel, 'same');
+
+         

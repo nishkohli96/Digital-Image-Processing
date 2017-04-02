@@ -1,0 +1,87 @@
+
+
+   Applying Filters and Transforming Images in Matlab
+
+    S=imread('C:\Users\HP\Downloads\lena.tif');
+
+   1.  2D FFT of an image
+
+        Y=fft2(S);
+        imshow(Y);
+
+   2.  Ideal Low Pass Filter
+
+        idealfilter(S,20,'lpf');    where 20 is the cutoff frequency
+
+   3.  Ideal High Pass Filter
+
+        idealfilter(S,20,'hpf'); 
+
+   4.  ButterWorth Low Pass Filter
+
+        ButterWorth(2,50,S,'lpf');
+
+   5.  ButterWorth High Pass Filter
+
+        ButterWorth(2,50,S,'hpf');
+
+   6.  Gaussian High Pass Filter
+
+        H = padarray(2,[2 2]) - fspecial('gaussian' ,[5 5],2);
+        sharpened = imfilter(S,H);  % create a sharpened version of the image using that mask
+        imshow(sharpened);
+
+   7.  Gaussian Low Pass Filter
+
+        Iblur = imgaussfilt(S, 2);
+
+   8.  Salt and Pepper Noise
+
+        J = imnoise(S,'salt & pepper',0.02);
+
+   9.  Poisson Noise
+
+        J = imnoise(S,'poisson');
+
+  10.  Gaussian Noise
+
+        J = imnoise(S,'gaussian',0,0.01);  %Mean and variance    
+
+  11.  Arithmetic Mean Filter
+
+        G=imnoise(S,'gaussian',0.0005,0.0019);
+        h = fspecial('average', 3);
+        F=imfilter(G,h);
+        imshow(F);
+
+  12.  Median Filter
+
+        Y=medfilt2(S,[5 5]);
+
+  13.  Geometric Mean Filter
+
+        geomeanfilter
+
+  14.  Harmonic Mean Filter
+
+        Harmonic_mean_filter(S,3);
+   
+  15.  ContraHarmonic Mean Filter
+
+        contra_harmonic_mean_filter
+
+  16.  Alpha Trimmed Mean Filter
+ 
+        alpha_trimmed_mean_filter 
+
+  17.  Max Filter
+    
+        max_filter
+
+  18.  Min Filter
+  
+        min_filter
+
+  19.  Midpoint Filter
+
+       midpoint_filter
