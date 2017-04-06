@@ -6,8 +6,11 @@
 
    1.  2D FFT of an image
 
-        Y=fft2(S);
-        imshow(Y);
+        Y=fft2(double(S));
+        Y=abs(Y);
+        R=fftshift(Y);
+        R=abs(R);
+        imshow(R);
 
    2.  Ideal Low Pass Filter
 
@@ -19,8 +22,7 @@
 
    4.  ButterWorth Low Pass Filter
 
-        ButterWorth(2,50,S,'lpf');
-
+         
    5.  ButterWorth High Pass Filter
 
         ButterWorth(2,50,S,'hpf');
